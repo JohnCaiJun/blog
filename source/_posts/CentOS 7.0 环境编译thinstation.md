@@ -57,7 +57,7 @@ cd ~/thinstation
 
 **重点**：对于CentOS环境，必须修改thinstation/ts/TS_ENV
 
-![这里写图片描述](https://img-blog.csdn.net/20180709122631443?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/20180709122631443?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 找到PATH变量，修改为：`PATH=$PATH:/ts/bin:/sbin:/bin` (不修改此处，在运行./setup-chroot后会因为找不到相关命令而报错，可能影响后续的编译)
 
@@ -163,9 +163,9 @@ machine Mini-PC
  ~]# ./build        //不要加--allmodules,我们已经得到了modules.list了呀！
 ```
 
-![这里写图片描述](https://img-blog.csdn.net/20180709124134151?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/20180709124134151?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-![这里写图片描述](https://img-blog.csdn.net/2018070912414457?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/2018070912414457?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
 
