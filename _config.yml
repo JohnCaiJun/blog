@@ -78,8 +78,9 @@ theme: 3-hexo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@140.143.39.116:/home/git/blog.git
-#https://github.com/johncaijun/johncaijun.github.io
+- type: git
+  repo: https://github.com/johncaijun/johncaijun.github.io
   branch: master
   message: 
