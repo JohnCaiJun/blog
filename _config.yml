@@ -80,6 +80,6 @@ theme: 3-hexo
 deploy:
   type: git
   repo: git@140.143.39.116:/home/git/blog.git
-  repo: https://github.com/johncaijun/johncaijun.github.io
+#https://github.com/johncaijun/johncaijun.github.io
   branch: master
   message: 

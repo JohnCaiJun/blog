@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>CentOS 7.0 环境编译thinstation | Cai Jun&#39;s blog</title>
+  <meta name="keywords" content=" 运维 ">
+  <meta name="description" content="CentOS 7.0 环境编译thinstation | Cai Jun&#39;s blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal web page">
+<meta name="keywords" content="caijun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://johncaijun.github.io/search/index.html">
+<meta property="og:site_name" content="Cai Jun&#39;s blog">
+<meta property="og:description" content="Personal web page">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-16T17:48:05.648Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="search">
+<meta name="twitter:description" content="Personal web page">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/atom-light.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js"></script>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>Cai Jun</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/johncaijun" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:johncai.caijun.cn@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<ul>
+    <li class="all active">全部文章</li>
+    
+    <li data-rel="网络"> 网络 </li>
+    
+    <li data-rel="编程"> 编程 </li>
+    
+    <li data-rel="数据库"> 数据库 </li>
+    
+    <li data-rel="运维"> 运维 </li>
+    
+    <li data-rel="算法"> 算法 </li>
+    
+    <li data-rel="数据结构"> 数据结构 </li>
+    
+    <li data-rel="Git"> Git </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="10">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">tcp</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">c++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">运维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">剑指offer</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="运维 " href="/2018-07-10-CentOS 7.0 环境编译thinstation/" data-tag="运维" data-author="">
+            <span class="post-title" title="CentOS 7.0 环境编译thinstation">CentOS 7.0 环境编译thinstation</span>
+            <span class="post-date" title="2018-07-09 12:43:17">2018/07/09</span>
+        </a>
+        
+        <a class="编程 " href="/2019-02-17-Advanced-Tips-for-c/" data-tag="c++" data-author="">
+            <span class="post-title" title="Advanced Tips for c++">Advanced Tips for c++</span>
+            <span class="post-date" title="2019-02-16 20:09:28">2019/02/16</span>
+        </a>
+        
+        <a class="算法 " href="/2019-02-23-Algorithm-Key-Mind/" data-tag="算法" data-author="">
+            <span class="post-title" title="Algorithm Key Mind">Algorithm Key Mind</span>
+            <span class="post-date" title="2019-02-22 17:04:57">2019/02/22</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019-02-23-Data-Structures-Key-Mind/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="Data Structures Key Mind">Data Structures Key Mind</span>
+            <span class="post-date" title="2019-02-22 19:23:54">2019/02/22</span>
+        </a>
+        
+        <a class="Git " href="/2019-02-17-Collaborating/" data-tag="git" data-author="">
+            <span class="post-title" title="Collaborating">Collaborating</span>
+            <span class="post-date" title="2019-02-16 13:38:42">2019/02/16</span>
+        </a>
+        
+        <a class="Git " href="/2019-02-16-Getting-Started/" data-tag="git" data-author="">
+            <span class="post-title" title="Getting Started">Getting Started</span>
+            <span class="post-date" title="2019-02-15 21:01:28">2019/02/15</span>
+        </a>
+        
+        <a class="数据库 " href="/2019-02-01-MySQL事务/" data-tag="MySQL" data-author="">
+            <span class="post-title" title="MySQL事务">MySQL事务</span>
+            <span class="post-date" title="2019-01-31 19:30:19">2019/01/31</span>
+        </a>
+        
+        <a class="数据库 " href="/2019-01-28-MySQL体系架构/" data-tag="MySQL" data-author="">
+            <span class="post-title" title="MySQL体系架构">MySQL体系架构</span>
+            <span class="post-date" title="2019-01-27 12:06:09">2019/01/27</span>
+        </a>
+        
+        <a class="算法 " href="/2019-02-23-二维数组中的查找/" data-tag="剑指offer" data-author="">
+            <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
+            <span class="post-date" title="2019-02-23 00:30:23">2019/02/23</span>
+        </a>
+        
+        <a class="运维 " href="/2018-06-02-我来管理用户和组/" data-tag="运维" data-author="">
+            <span class="post-title" title="我来管理用户和组">我来管理用户和组</span>
+            <span class="post-date" title="2018-06-02 03:13:18">2018/06/02</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-CentOS 7.0 环境编译thinstation" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">CentOS 7.0 环境编译thinstation</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="运维">运维</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">运维</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-02-22 13:20:05">2018-07-09 12:43</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备一台CentOS-7-服务器-我的是阿里云的"><span class="toc-text">准备一台CentOS 7 服务器 (我的是阿里云的)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-克隆thinstation仓库，并初始化环境"><span class="toc-text">2.克隆thinstation仓库，并初始化环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装ftp服务，将编译好的thinstation文件从服务器拉下来"><span class="toc-text">3.安装ftp服务，将编译好的thinstation文件从服务器拉下来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-创建一个用户（将编译好的thinstation生成的iso-pxe等复制到此用户的家目录）"><span class="toc-text">4.创建一个用户（将编译好的thinstation生成的iso,pxe等复制到此用户的家目录）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-初始化thinstation编译环境"><span class="toc-text">5.初始化thinstation编译环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-自定义配置文件"><span class="toc-text">6.自定义配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-再次编译符合目标主机驱动的thinstation"><span class="toc-text">8.再次编译符合目标主机驱动的thinstation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下"><span class="toc-text">9.最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-瘦客户端就制作完成啦"><span class="toc-text">10.瘦客户端就制作完成啦</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备一台CentOS-7-服务器-我的是阿里云的"><a href="#准备一台CentOS-7-服务器-我的是阿里云的" class="headerlink" title="准备一台CentOS 7 服务器 (我的是阿里云的)"></a>准备一台CentOS 7 服务器 (我的是阿里云的)</h2><p>###1.安装git</p>
+<pre><code class="bash"> yum install git
+</code></pre>
+<h3 id="2-克隆thinstation仓库，并初始化环境"><a href="#2-克隆thinstation仓库，并初始化环境" class="headerlink" title="2.克隆thinstation仓库，并初始化环境"></a>2.克隆thinstation仓库，并初始化环境</h3><p>github 地址：<a href="https://github.com/Thinstation/thinstation.git" target="_blank" rel="noopener">https://github.com/Thinstation/thinstation.git</a></p>
+<pre><code class="bash"> git clone git://github.com/Thinstation/thinstation.git
+</code></pre>
+<p>thinstation大概有1.3G,网速正常的话也可能很慢，下载时间比较长，耐心等待。</p>
+<h3 id="3-安装ftp服务，将编译好的thinstation文件从服务器拉下来"><a href="#3-安装ftp服务，将编译好的thinstation文件从服务器拉下来" class="headerlink" title="3.安装ftp服务，将编译好的thinstation文件从服务器拉下来"></a>3.安装ftp服务，将编译好的thinstation文件从服务器拉下来</h3><pre><code class="bash">yum install vsftpd
+</code></pre>
+<p>编辑<code>/etc/vsftpd/vsftpd.conf</code>,确保以下选项</p>
+<pre><code>local_enable=YES
+write_enable=YES
+</code></pre><h3 id="4-创建一个用户（将编译好的thinstation生成的iso-pxe等复制到此用户的家目录）"><a href="#4-创建一个用户（将编译好的thinstation生成的iso-pxe等复制到此用户的家目录）" class="headerlink" title="4.创建一个用户（将编译好的thinstation生成的iso,pxe等复制到此用户的家目录）"></a>4.创建一个用户（将编译好的thinstation生成的iso,pxe等复制到此用户的家目录）</h3><pre><code class="bash"> useradd centos;echo &quot;123&quot;;passwd --stdin centos;
+</code></pre>
+<p>下载结束后，你克隆的thinstation源码将存放在你当前终端所在目录下，一般默认在当前用户的目录下。</p>
+<h3 id="5-初始化thinstation编译环境"><a href="#5-初始化thinstation编译环境" class="headerlink" title="5.初始化thinstation编译环境"></a>5.初始化thinstation编译环境</h3><p>cd到thinstation/目录</p>
+<pre><code class="bash">cd ~/thinstation
+</code></pre>
+<p>然后执行./setup-chroot进行初始化（注意当前用户必须是root,有些命令只有拥有超级用户权限才能执行）</p>
+<pre><code class="bash">./setup-chroot
+</code></pre>
+<p>注意此时终端显示的信息，这些都是thinstation所支持的package</p>
+<p><strong>重点</strong>：对于CentOS环境，必须修改thinstation/ts/TS_ENV</p>
+<p><img src="https://img-blog.csdn.net/20180709122631443?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>找到PATH变量，修改为：<code>PATH=$PATH:/ts/bin:/sbin:/bin</code> (不修改此处，在运行./setup-chroot后会因为找不到相关命令而报错，可能影响后续的编译)</p>
+<p>初始化结束：按Q退出，按Q退出只是进入到了编译的环境，并不是退出编译</p>
+<p>退出的只是当前的页面，其实按Q之后进入编译环境并不是退出编译环境，而是显示着</p>
+<pre><code class="bash">[root@TS_chroot]/#
+</code></pre>
+<p>如果要退出编译环境还需要输入exit 再次退出，按H帮助，到这里编译环境就搭建好了。</p>
+<p>需要再次进入编译环境，还需切换到超级用户，进入thinstation目录输入<code>./setup-chroot</code> 后，按Q再次进入编译环境。（每次对thinstation进行编译都得这样操作）</p>
+<h3 id="6-自定义配置文件"><a href="#6-自定义配置文件" class="headerlink" title="6.自定义配置文件"></a>6.自定义配置文件</h3><p>编译环境搭建好后，将thinstation编译成符合自己需求的thinstation才是真正的编译过程。那么最重要的就是配置文件了。</p>
+<p>主要有两个配置文件:</p>
+<pre><code>  (1) build.conf
+  (2) build.conf.buildtime
+</code></pre><p><strong>对于build.conf文件：</strong></p>
+<ol>
+<li>文件说明<br>这个文件是thinstation的基本配置文件，你可以通过修改这个文件选择你需要thinstation<br>兼容那些硬件包含那些程序和功能，并通过运行“./build”命令生成thinstation 启动镜<br>像。</li>
+<li>模块<br>首先，查看thinstation支持的主机型号模块是否在thinstation/build/machine/目录下已存在。</li>
+</ol>
+<p>不存在自己创建自己主机型号模块（建议自己创建）</p>
+<pre><code class="bash">./mkchine Mini-PC  //此时会生成build/machine/Mini-PC目录
+</code></pre>
+<p>我们将自己这个主机型号模块编译进这个build.conf文件中</p>
+<pre><code class="bash">machine Mini-PC  
+</code></pre>
+<p>此时machine/Mini-PC目录为空，现在的问题是怎么得到客户端主机的驱动模块？</p>
+<p>不急，先说一下thinstation.conf.buildtime配置文件，你需要先完成一次任意的编译。</p>
+<p><strong>对于thinstation.conf.buildtmie</strong></p>
+<ol>
+<li><p>文件说明<br>这个文件主要是定义开机后主机的一些设置。</p>
+</li>
+<li><p>参数<br>主要有<br>自定义音量<br>麦克风<br>图形界面管理器<br>系统主题风格，如xp<br>显示图标<br>开机自动运行</p>
+</li>
+</ol>
+<p>等等</p>
+<p>###　7.获取目标主机的硬件驱动模块</p>
+<p>配合PXE服务器，主要有以下几个步骤：</p>
+<pre><code> （1）在build.conf配置文件中找到 #package extension 与 #package extensions-x 这两个选项，然后开启（去掉注释）。
+ （2）build.conf和build.conf.buildtime配置文件准备完毕后，使用./buid --allmodules编译
+</code></pre><pre><code class="bash"> ./build --allmodules    //allmodules顾名思义，就是编译所有的模块拉~
+</code></pre>
+<p>然后将编译好的thinstation/build/boot-images下的pxe下的所有文件复制到PXE服务器的tftp目录下。</p>
+<p><strong>接下来要注意了：</strong></p>
+<pre><code> （1）客户端开机网卡启动，PXE引导thinstation（小型的linux系统）kernel并加载到内存,
+ 此时客户端应该启动进入界面了，然后客户端运行终端terminel或者xterm,
+ 在终端中输入“/bin/hwlister.sh&quot;运行，你将会得到modules.list(firmware.list可能会有)，modules.list包含了客户端主机驱动模块的列表.
+</code></pre><pre><code class="bash">~]# ls /
+</code></pre>
+<p>你会发现在根目录下多了modules.list文件，用u盘将它拷贝到你的PXE服务器上。</p>
+<pre><code> （2）将modules.list文件copy到你的创建的机器模块目录下，
+ 我这里是thinstation/build/machine/PHILIPS/mudules.list。
+ （因为机器的不同，可能也会生成firmware.list等文件，但这并不是必须的，必须的文件只有mudules.list文件）
+</code></pre><p>如果你的机器允许tftp上传，官方文档说会直接发送到相关machine模块的目录下，我这里是直接用u盘烤过去的。</p>
+<h3 id="8-再次编译符合目标主机驱动的thinstation"><a href="#8-再次编译符合目标主机驱动的thinstation" class="headerlink" title="8.再次编译符合目标主机驱动的thinstation"></a>8.再次编译符合目标主机驱动的thinstation</h3><p><strong>注意啦：</strong></p>
+<pre><code class="bash"> ~]# vim build      //不要忘记注释 package extensions 与 package extensions-x
+ ~]# ./build        //不要加--allmodules,我们已经得到了modules.list了呀！
+</code></pre>
+<p><img src="https://img-blog.csdn.net/20180709124134151?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p><img src="https://img-blog.csdn.net/2018070912414457?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FhcnJvbl9ETA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>如果你不通过/bin/hwlister.sh命令获取客户端主机驱动，我们需要知道那些模块是我们需要编译进去的，模块就是对应的驱动，在modules.list文件中定义。不要把不需要的模块编译进去，越多的模块启动所需的时间越长。</p>
+<h3 id="9-最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下"><a href="#9-最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下" class="headerlink" title="9.最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下"></a>9.最后就是将编译完成的pxe目录下的所有内容拷贝到PXE服务器的tftp目录下</h3><h3 id="10-瘦客户端就制作完成啦"><a href="#10-瘦客户端就制作完成啦" class="headerlink" title="10.瘦客户端就制作完成啦"></a>10.瘦客户端就制作完成啦</h3>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 876208453@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>CentOS 7.0 环境编译thinstation</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Cai Jun">Cai Jun</a></p>
+    <p><span>发布时间:</span>2018-07-09, 12:43:17</p>
+    <p><span>最后更新:</span>2019-02-22, 13:20:05</p>
+    <span>原始链接:</span><a class="post-url" href="/2018-07-10-CentOS 7.0 环境编译thinstation/" title="CentOS 7.0 环境编译thinstation">http://johncaijun.github.io/2018-07-10-CentOS 7.0 环境编译thinstation/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 CaiJun</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#tcp','#c++','#MySQL','#运维','#算法','#数据结构','#git','#剑指offer',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("https://i.loli.net/2019/02/23/5c7039881c035.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+
+
+
+
+</html>

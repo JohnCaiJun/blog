@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Algorithm Key Mind | Cai Jun&#39;s blog</title>
+  <meta name="keywords" content=" 算法 ">
+  <meta name="description" content="Algorithm Key Mind | Cai Jun&#39;s blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Personal web page">
+<meta name="keywords" content="caijun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://johncaijun.github.io/search/index.html">
+<meta property="og:site_name" content="Cai Jun&#39;s blog">
+<meta property="og:description" content="Personal web page">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-16T17:48:05.648Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="search">
+<meta name="twitter:description" content="Personal web page">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/atom-light.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js"></script>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>Cai Jun</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/johncaijun" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:johncai.caijun.cn@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<ul>
+    <li class="all active">全部文章</li>
+    
+    <li data-rel="网络"> 网络 </li>
+    
+    <li data-rel="编程"> 编程 </li>
+    
+    <li data-rel="数据库"> 数据库 </li>
+    
+    <li data-rel="运维"> 运维 </li>
+    
+    <li data-rel="算法"> 算法 </li>
+    
+    <li data-rel="数据结构"> 数据结构 </li>
+    
+    <li data-rel="Git"> Git </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="10">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">tcp</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">c++</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">运维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">剑指offer</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="运维 " href="/2018-07-10-CentOS 7.0 环境编译thinstation/" data-tag="运维" data-author="">
+            <span class="post-title" title="CentOS 7.0 环境编译thinstation">CentOS 7.0 环境编译thinstation</span>
+            <span class="post-date" title="2018-07-09 12:43:17">2018/07/09</span>
+        </a>
+        
+        <a class="编程 " href="/2019-02-17-Advanced-Tips-for-c/" data-tag="c++" data-author="">
+            <span class="post-title" title="Advanced Tips for c++">Advanced Tips for c++</span>
+            <span class="post-date" title="2019-02-16 20:09:28">2019/02/16</span>
+        </a>
+        
+        <a class="算法 " href="/2019-02-23-Algorithm-Key-Mind/" data-tag="算法" data-author="">
+            <span class="post-title" title="Algorithm Key Mind">Algorithm Key Mind</span>
+            <span class="post-date" title="2019-02-22 17:04:57">2019/02/22</span>
+        </a>
+        
+        <a class="数据结构 " href="/2019-02-23-Data-Structures-Key-Mind/" data-tag="数据结构" data-author="">
+            <span class="post-title" title="Data Structures Key Mind">Data Structures Key Mind</span>
+            <span class="post-date" title="2019-02-22 19:23:54">2019/02/22</span>
+        </a>
+        
+        <a class="Git " href="/2019-02-17-Collaborating/" data-tag="git" data-author="">
+            <span class="post-title" title="Collaborating">Collaborating</span>
+            <span class="post-date" title="2019-02-16 13:38:42">2019/02/16</span>
+        </a>
+        
+        <a class="Git " href="/2019-02-16-Getting-Started/" data-tag="git" data-author="">
+            <span class="post-title" title="Getting Started">Getting Started</span>
+            <span class="post-date" title="2019-02-15 21:01:28">2019/02/15</span>
+        </a>
+        
+        <a class="数据库 " href="/2019-02-01-MySQL事务/" data-tag="MySQL" data-author="">
+            <span class="post-title" title="MySQL事务">MySQL事务</span>
+            <span class="post-date" title="2019-01-31 19:30:19">2019/01/31</span>
+        </a>
+        
+        <a class="数据库 " href="/2019-01-28-MySQL体系架构/" data-tag="MySQL" data-author="">
+            <span class="post-title" title="MySQL体系架构">MySQL体系架构</span>
+            <span class="post-date" title="2019-01-27 12:06:09">2019/01/27</span>
+        </a>
+        
+        <a class="算法 " href="/2019-02-23-二维数组中的查找/" data-tag="剑指offer" data-author="">
+            <span class="post-title" title="二维数组中的查找">二维数组中的查找</span>
+            <span class="post-date" title="2019-02-23 00:30:23">2019/02/23</span>
+        </a>
+        
+        <a class="运维 " href="/2018-06-02-我来管理用户和组/" data-tag="运维" data-author="">
+            <span class="post-title" title="我来管理用户和组">我来管理用户和组</span>
+            <span class="post-date" title="2018-06-02 03:13:18">2018/06/02</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-Algorithm-Key-Mind" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">Algorithm Key Mind</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="算法">算法</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">算法</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-02-22 11:55:23">2019-02-22 17:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对分查找"><span class="toc-text">对分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#源码"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法分析："><span class="toc-text">算法分析：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高效率取幂运算"><span class="toc-text">高效率取幂运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#源码-1"><span class="toc-text">源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法分析"><span class="toc-text">算法分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-text">插入排序</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="对分查找"><a href="#对分查找" class="headerlink" title="对分查找"></a>对分查找</h2><h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><pre><code class="c">int BinarySearch(const ElementType A[], ElementType X, int N)
+{
+    int low, mid, high, notfound;
+    notfound = -1;
+    low = 0;
+    high = N - 1;
+    while(low &lt;= high){
+        mid = (low + high) / 2;
+        if(A[mid] &gt; X){
+            high = mid - 1;
+        }else if(A[mid] &lt; X){
+            low = mid + 1;
+        }else
+            return mid;
+    } 
+    return notfound;
+}
+</code></pre>
+<h3 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h3><p>信息：</p>
+<ol>
+<li>A数组本身就已经排好序</li>
+<li>一共有N个数，每次折半查找</li>
+</ol>
+<blockquote>
+<p>Key Mind:</p>
+<blockquote>
+<p>分析循环的次数，逆向思维从0开始以2的幂次方查找，总共有N个数。设循环T次，表达式为2^T =N-1，则T=log(N-1)。所以运行时间为O(logN)。</p>
+</blockquote>
+</blockquote>
+<h2 id="高效率取幂运算"><a href="#高效率取幂运算" class="headerlink" title="高效率取幂运算"></a>高效率取幂运算</h2><h3 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h3><pre><code class="c">long int pow(long int x, unsigned int N)
+{
+    if(N = 0)
+        return 1;
+    if(N == 1)
+        return x;
+    if( IsEven(N))
+        return pow(x * x, N / 2);
+    else 
+        return pow(x * x, N / 2) * x;
+}
+</code></pre>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p>信息：</p>
+<ol>
+<li>该函数计算x^N 次方</li>
+<li>isEven判断N是否是偶数</li>
+</ol>
+<blockquote>
+<p>Key Mind:</p>
+<blockquote>
+<p>分析循环的次数。总共是N次，循环一次后为N/2次每次减半，也采用逆向思维，以2的幂次方增长2^T =N，所以T=logN。所以运行时间为O(logN);</p>
+</blockquote>
+</blockquote>
+<p>总结对分查找和取幂运算，都是对数O(logN)运行时间，逆向考虑对应的都是2的幂次方计算，表达式2^x = N；所以二分思想能提高很大的效率。</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><pre><code class="c">void insertionSort( ElementType A[], int N )
+{
+    int i, j;
+    ElementType tmp;
+    for( i = 1; i &lt; N; i++ )
+    {
+        tmp = A[i];
+        for( j = i; j &gt; 0 &amp;&amp; A[j-1] &gt; tmp; j-- )
+        {
+            A[j] = A[j-1];
+        }
+        A[j] = tmp;   
+    }
+
+}
+</code></pre>
+<blockquote>
+<p>Key Mind:</p>
+<blockquote>
+<p>将下标i读取到的值保存（隐喻腾空i的位置），第二个for循环指针回走检查，只要比与保存的值大就往后移。j最大值为N-1，所以两个for循环总次数为N^2 ，即时间复杂度为O(N^2 )。</p>
+</blockquote>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 876208453@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>Algorithm Key Mind</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="Cai Jun">Cai Jun</a></p>
+    <p><span>发布时间:</span>2019-02-22, 17:04:57</p>
+    <p><span>最后更新:</span>2019-02-22, 11:55:23</p>
+    <span>原始链接:</span><a class="post-url" href="/2019-02-23-Algorithm-Key-Mind/" title="Algorithm Key Mind">http://johncaijun.github.io/2019-02-23-Algorithm-Key-Mind/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 CaiJun</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#tcp','#c++','#MySQL','#运维','#算法','#数据结构','#git','#剑指offer',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("https://i.loli.net/2019/02/23/5c7039881c035.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+
+
+
+
+</html>
