@@ -1,0 +1,171 @@
+---
+title: 文本处理工具 for shell
+categories: 运维
+tags: Shell
+date: 2019-02-24 02:31:40
+---
+
+## 常用的文本查看及处理工具
+1. wc
+2. cut
+3. sort
+4. uniq
+5. diff
+6. patch
+
+### wc
+选项：
+
+``` shell
+wc -c #计算字节
+wc -w #计算单词
+wc -l #计算行数
+```
+
+### cut
+选项：
+
+```shell
+cut -d":" #分隔符":"
+cut -f1   #只显示指定的字段
+```
+### sort
+选项：
+
+```shell
+sort -t":" #指定分隔符":"
+sort -k1   #根据字段1排序
+sort -n    #根据Num排序
+sort -r    #逆序
+sort -f    #忽略大小写
+sort -u    #重复的内容只保留一次
+```
+### uniq
+选项
+
+```shell
+uniq -c #显示每行的重复次数
+uniq -u #仅显示未曾重复的行
+uniq -d #仅显示重复过的行
+```
+>注意：'uniq'不检测重复行，除非它们相邻。
+
+
+### diff
+比较两个文件差异
+
+``` shell
+diff OLDFILE  NEWFILE > /PATH/TO/PATCH_FILE
+```
+ 
+
+### patch
+向文件打补丁
+
+```shell
+patch [OPTION] -i /PATH/PATCH_FILE  /PATH/OLDFILE
+patch /PATH/OLDFILE < /PATH/PATCH_FILE
+```
+
+## Linux文本处理三剑客
+1. grep
+2. sed
+3. awk
+
+
+### grep
+文本过滤工具
+
+用法：
+
+``` shell
+#在/path路径下搜索关键词keyword，并显示行号
+grep -rn "keyword" /path  
+
+#忽略大小写
+grep -i “name”
+
+#显示除grep以外被匹配到的，常用于管道
+grep -v "grep" 
+```
+
+### sed
+stream editor，流编辑器、文本编辑工具
+
+用法：
+
+``` shell
+#脚本中替换文件中的某个字符串
+sed -i "s/s1/s2/g" /etc/my.conf 
+
+#sed搭配grep，替换/etc目录下包含wanger字符串的文件中的wanger
+sed -i “s/wanger/mazi/g” `grep wanger -r /etc`
+```
+
+### awk
+文本报告生成器（文本格式化输出）
+
+工作原理：一次读取一行文本，分隔字段（切片），用位置变量$1,$2,$3…
+整行内容$0
+随意指明一个字段（或整行，或多个字段），对它进行条件过滤
+
+选项：
+
+* -F“:”：指明输入时用到的字段分隔符:
+
+用法：
+
+``` bash
+
+#统计状态数
+{} ~ netstat -tan
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN
+tcp        0      0 127.0.0.1:32000         0.0.0.0:*               LISTEN
+tcp        0     76 172.16.252.139:22       223.104.176.236:56419   ESTABLISHED
+tcp        0      0 127.0.0.1:31000         127.0.0.1:32000         ESTABLISHED
+tcp        0      0 127.0.0.1:32000         127.0.0.1:31000         ESTABLISHED
+tcp        0      0 172.16.252.139:22       223.104.176.236:56040   ESTABLISHED
+tcp        0      0 172.16.252.139:44158    100.100.25.3:80         ESTABLISHED
+{} ~ netstat -tan | awk '/^tcp/{state[$NF]++} END{for(i in state) {printf "%10s : %-10s",i,state[i]}}'
+    LISTEN : 3         ESTABLISHED : 5      
+统计ip访问次数
+{} ~ tail /var/log/httpd/access_log
+223.104.176.236 - - [01/Jun/2018:00:42:58 +0800] "GET / HTTP/1.1" 200 40 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+223.104.176.236 - - [01/Jun/2018:00:42:58 +0800] "GET /favicon.ico HTTP/1.1" 404 209 "http://39.107.75.0/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
+{} ~ tail /var/log/httpd/access_log | awk '{ip[$1]++} END{for(i in ip) {printf "%15s:%-s",i,ip[i]}}'
+223.104.176.236:3#
+
+#统计每种文件系统类型的次数
+{} ~ cat /etc/fstab
+#
+# /etc/fstab
+# Created by anaconda on Fri Aug 18 03:51:14 2017
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=59d9ca7b-4f39-4c0c-9334-c56c182076b5 /                       ext4    defaults        1 1
+{} ~ awk '/^[^#]/{file_type[$3]++} END{for(i in file_type) {printf "%s:%-s\n",i,file_type[i]}}' /etc/fstab
+ext4:1
+
+#统计/etc/fstab文件中每个单词出现的次数：
+{} ~ cat /etc/fstab
+#
+# /etc/fstab
+# Created by anaconda on Fri Aug 18 03:51:14 2017
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+UUID=59d9ca7b-4f39-4c0c-9334-c56c182076b5 /                       ext4    defaults        1 1
+{} ~ cat /etc/fstab | sed 's/[/,#,=]/ /g' | xargs | xargs -n1 | awk '{word[$1]++} END{for(i in word) {printf "%s:%-s\t",i,word[i]}}'
+on:1    18:1    ext4:1    more:1    mount(8):1    fstab:1    UUID:1    or:1    pages:1    dev:1    reference:1    fstab(5):1    disk:1    etc:1    blkid(8):1    and:1    See:1    for:1    anaconda:1    under:1    03:51:14:1    Created:1    info:1    Accessible:1    1:2    findfs(8):1    Fri:1defaults:1    59d9ca7b-4f39-4c0c-9334-c56c182076b5:1    man:1    are:1    by:2    maintained:1    filesystems:1    2017:1    Aug:1    #
+{} ~ awk '{for(i=1;i<=NF;i++) {count[$i]++}} END{for(i in count) {printf "%s:%-s\t",i,count[i]}}' /etc/fstab
+UUID=59d9ca7b-4f39-4c0c-9334-c56c182076b5:1    fstab(5),:1    filesystems,:1    on:1    /etc/fstab:1    18:1    ext4:1    more:1    mount(8):1    pages:1    '/dev/disk':1    blkid(8):1    See:1    for:1    and/or:1    anaconda:1    /:1    findfs(8),:1    under:1    03:51:14:1    Created:1    info:1    Accessible:1    #:7    1:2    Fri:1    defaults:1    man:1    are:1    reference,:1    by:2    maintained:1    2017:1    Aug:1#
+```
+
+
+
