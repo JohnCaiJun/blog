@@ -80,7 +80,7 @@ csdn博客：https://blog.csdn.net/Aarron_DL
 
 ## 个人评价
 
-追寻自己喜欢的东西，做一个有追求的programmer。
+追寻自己喜欢的东西，创造有价值的东西，做一个有追求的programmer。
 
 
 
