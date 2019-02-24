@@ -2,7 +2,7 @@
 title: Getting Started
 date: 2019-02-15 21:01:28
 categories: Git
-tags: git
+tags: Git
 ---
 
 ## 设置存储库

@@ -2,7 +2,7 @@
 title: Collaborating
 date: 2019-02-16 13:38:42
 categories: Git
-tags: git
+tags: Git
 ---
 # 利用本地共享库完成多人同时协作
 演示一个共享版本库的搭建过程，以及两个用户user1和user2在各自的工作区中是如何工作并进行数据交换的。
