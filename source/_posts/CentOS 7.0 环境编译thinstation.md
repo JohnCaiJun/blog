@@ -5,7 +5,7 @@ tags: 运维
 date: 2018-07-09 12:43:17
 ---
 ## 准备一台CentOS 7 服务器 (我的是阿里云的)
-###1.安装git
+### 1.安装git
 ```bash
  yum install git
 ```
