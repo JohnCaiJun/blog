@@ -52,7 +52,7 @@
 ## 学术经历
 
 			
-- 精通Linux操作系统，熟悉unix/linux常用命令的使用
+- 熟悉Linux操作系统，熟悉unix/linux常用命令的使用
 - shell编程，能够运用shell写些小程序处理文本数据
 - 熟练使用vim
 - git版本控制
