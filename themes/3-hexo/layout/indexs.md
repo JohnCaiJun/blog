@@ -22,18 +22,16 @@
 
 通过此项目，对企业云桌面架构有了深入的了解。
 
-## 学术经历
+## 专业技能
 
 			
-- 熟悉Linux操作系统，熟悉unix/linux常用命令的使用
-- shell编程，能够运用shell写些小程序处理文本数据
-- 熟练使用vim
-- git版本控制
-- 熟悉tcp，udp，ip等协议
-- 熟练使用数据库MySQL
-- nginx，反向代理，负载均衡
-- lxc容器
-- lvs
+- Java、C
+- Linux、Shell
+- Git
+- 网络
+- 数据库（MySQL）
+- Nginx，反向代理，负载均衡
+- 云计算
 
 ## 校园
 
