@@ -5,6 +5,18 @@ categories: 运维
 tags: Doker
 ---
 
-## etcd
-每秒钟1万次key-value存储
+## 部署k8s
+1. etcd
+2. kubernetes-master
+
+```bash
+systemctl start apiserver , kube-controller-manager kube-scheduler
+```
+3. 节点
+
+```bash
+systemctl start flanneld docker kube-proxy kubelet
+```
+
+
 

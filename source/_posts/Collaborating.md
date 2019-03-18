@@ -109,7 +109,7 @@ $ git push origin master
 ```
 注意：此时会推送错误。
 
-查看是否是快进式推送。果然不是，所以此时user2必须先Pull最新的版本库。
+查看是否是快进式推送。果然不是，所以此时user1必须先Pull最新的版本库。
 
 ```bash
 git pull
