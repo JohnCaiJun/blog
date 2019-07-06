@@ -17,6 +17,12 @@ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git 
 ```
 
+几个镜像:
+
+* https://git.coding.net/homebrew/homebrew.git - Coding
+* https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git - 清华
+* https://mirrors.ustc.edu.cn/brew.git - 中科大
+
 ## 重置  brew源
 如果你想重置brew源，那么切换为原来的下载地址就可以了。
 
