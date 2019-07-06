@@ -191,7 +191,7 @@ deploy:
   
 ```
 >注意：
->在hexo deploy发布完成后通过监听hexo的deployAfter事件，会自动执行我们上一小节添加的autoDeploy.js文件。
+>>在hexo deploy发布完成后通过监听hexo的deployAfter事件，会自动执行我们上一小节添加的autoDeploy.js文件。
 
 所以，当我们执行命令：
 
