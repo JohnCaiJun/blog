@@ -11,9 +11,9 @@ Git的三个配置文件分别是版本库级别的配置文件（该项目目�
 按照优先级高低依次为：
 
 ```git
-1. git config -e 
-2. git config -e --global
-3. git config -e --system  
+$ git config -e 
+$ git config -e --global
+$ git config -e --system  
 ```
 执行以上命令会打开相应的git配置文件。
 
@@ -47,19 +47,19 @@ hello
 也就是说welcome.txt有三个不同的版本，一个在工作区，一个在等待提交的暂存区，还有一个是版本库中最新版本的welcome.txt。通过调用不同的git diff命令可以看到不同状态下的welcome.txt文件的差异。
 
 ```git
-1. 显示工作区与提交暂存区（stage）中文件的差异
-git diff 
+1. 显示工作区（1号库）与提交暂存区（2号库）中文件的差异
+$ git diff 
 
-2. 显示工作区与当前版本库（HEAD）中文件的差异
-git diff HEAD
+2. 显示工作区（1号库）与当前版本库（3号库）中文件的差异
+$ git diff HEAD
 
-3. 显示提交暂存区与版本库中文件的差异（--cached或--staged）
-git diff --cached
+3. 显示提交暂存区（2号库）与版本库中（3号库）文件的差异（--cached或--staged）
+$ git diff --cached
 ```
 
 ## 撤销
 ### 吃后悔药
-依照暂存区welcome.txt重置工作区welcome.txt文件
+依照暂存区（2号库）welcome.txt重置工作区（1号库）welcome.txt文件
 
 ```bash
 $ git checkout -- welcome.txt
@@ -69,17 +69,40 @@ $ git checkout -- welcome.txt
 #！！如果git checkout HEAD则会依照版本库重置暂存区和工作区（极具危险性）
 ```
 
-依照版本库重置暂存区，但工作区不受影响
+依照版本库(3号库)重置暂存区（2号库），但工作区不受影响（1号库）
 
 ```bash
 $ git reset HEAD
 ```
 
-直接从暂存区删除文件，工作区不受影响
+直接从暂存区（2号库）删除文件，工作区（1号库）不受影响
 
 ```bash
-$ git rm --cached
+# 假如不小心把.idea目录保存到了暂存区，则可以
+$ git rm -r --cached .idea
 ```
+
+回到commit之前
+
+``` bash
+$ git commit -m "添加element-ui"
+# 比如说我提交时commit信息想改一下
+$ git reset --soft 
+# 然后再次提交
+$ git commit -m "添加element-ui和axios"
+```
+
+回到某个提交节点ID，重置为ID的版本库、暂存区、工作区
+
+```bash
+$ git reset --hard ID
+
+# 如果我想删除上一次的版本库历史
+$ git reset --hard HEAD^
+$ git push --force
+```
+
+
 ### 删除
 显示会删除当前目录下的未跟踪的文件（Untracked）或目录
 
