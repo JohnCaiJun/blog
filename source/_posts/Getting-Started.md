@@ -87,7 +87,7 @@ $ git rm -r --cached .idea
 ``` bash
 $ git commit -m "添加element-ui"
 # 比如说我提交时commit信息想改一下
-$ git reset --soft 
+$ git reset --soft HEAD^
 # 然后再次提交
 $ git commit -m "添加element-ui和axios"
 ```
