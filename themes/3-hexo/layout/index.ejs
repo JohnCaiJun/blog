@@ -30,9 +30,9 @@
             <%- partial('indexs.md') %>
         </article>
         <% if(theme.reward){%>
-        <p>
+        <!--  <p>
             <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
+            </p> -->
         <%}%>
         <%- partial('_partial/comment', {post: {comments: true}, index: false})%>
     </div>
@@ -41,10 +41,10 @@
             return partial('_partial/copyright');
         }) %>
     </div>
-    <div class="full-toc">
+    <!-- <div class="full-toc">
         <%- fragment_cache('toc', function(){
             return partial('_partial/full-toc');
-        }) %>
+        }) %>-->
     </div>
 </div>
 <div class="acParent"></div>

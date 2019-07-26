@@ -212,5 +212,3 @@ hexo会做三件事情：
 >>2.[自动备份Hexo博客源文件](https://notes.doublemine.me/2015-07-06-%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E5%8D%9A%E5%AE%A2%E6%BA%90%E6%96%87%E4%BB%B6.html)
 >>3.[Git服务器搭建并自动部署Hexo到云主机与Github](http://www.huyidada.com/2017/08/26/HexoSyncGit/#%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
 
-
-
