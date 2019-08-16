@@ -33,6 +33,4 @@ el-checkbox class="login_remember"
   }
 ```
 
-1
-
 
