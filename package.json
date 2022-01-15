@@ -17,6 +17,6 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-search": "^1.0.4",
     "hexo-server": "^0.3.1",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.5"
   }
 }
